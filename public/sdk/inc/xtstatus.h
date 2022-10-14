@@ -45,5 +45,3 @@ Revision History:
 //
 
 #define STATUS_INVALID_PARAMETER 0xC0000001
-
-
