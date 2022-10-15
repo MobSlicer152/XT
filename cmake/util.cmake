@@ -15,3 +15,18 @@ function(check_toolchain)
     endif()
 endfunction()
 
+function(target_subsystem target subsystem)
+    target_link_options(${target} PRIVATE -subsystem:${subsystem})
+endfunction()
+
+function(target_entrypoint target entrypoint)
+    target_link_options(${target} PRIVATE -entry:${entrypoint})
+endfunction()
+
+function(target_folder target folder)
+    set_target_properties(${target} PROPERTIES FOLDER ${folder})
+endfunction()
+
+function(target_extension target extension)
+    set_target_properties(${target} PROPERTIES SUFFIX ${extension})
+endfunction()

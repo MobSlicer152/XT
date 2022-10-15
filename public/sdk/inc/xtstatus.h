@@ -16,6 +16,17 @@ Revision History:
 
 --*/
 
+#ifndef _XTSTATUS_H
+#define _XTSTATUS_H
+
+#include <xtdef.h>
+
+//
+// Status code type
+//
+
+typedef UINT32 XTSTATUS;
+
 //
 // Determine if a status is a success
 //
@@ -41,7 +52,15 @@ Revision History:
 #define STATUS_SUCCESS 0x00000000
 
 //
+// Unknown error
+//
+
+#define STATUS_UNKNOWN_ERROR 0xC0000000
+
+//
 // Invalid parameter
 //
 
 #define STATUS_INVALID_PARAMETER 0xC0000001
+
+#endif /* _XTSTATUS_H */
