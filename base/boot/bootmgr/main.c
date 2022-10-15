@@ -18,4 +18,28 @@ Revision History:
 
 #include "bootmgrp.h"
 
+XTSTATUS
+BootMain(
+    VOID
+    )
+/*++
 
+Routine Description:
+
+    This routine implements the entrypoint of the boot manager.
+
+Arguments:
+
+    None.
+
+Return Value:
+
+    XTSTATUS - Returns STATUS_SUCCESS if nothing goes wrong, otherwise an
+    appropriate error status.
+
+--*/
+{
+    BlPrint("Hello, world!\n");
+
+    return STATUS_SUCCESS;
+}

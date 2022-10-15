@@ -55,4 +55,14 @@ BlEfiStatusToXtStatus(
     EFI_STATUS Status
     );
 
+//
+// Print a message
+//
+
+VOID
+BlPrint(
+    PCCHAR Format,
+    ...
+    );
+
 #endif /* _BOOTLIB_H */

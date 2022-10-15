@@ -25,7 +25,7 @@ Revision History:
 //
 
 #define VOID          void;
-typedef signed char   CHAR;
+typedef char          CHAR;
 typedef unsigned char UCHAR;
 typedef UCHAR         BYTE;
 typedef bool          BOOL;
@@ -51,7 +51,7 @@ typedef uintptr_t     UINTPTR;
 //
 
 typedef size_t SIZE_T;
-#if sizeof(size_t) == 4
+#if SIZE_WIDTH == 32
 typedef INT32 SSIZE_T;
 #else
 typedef INT64 SSIZE_T;
@@ -61,7 +61,7 @@ typedef INT64 SSIZE_T;
 // Pointer types
 //
 
-typedef VOID*    PVOID;
+typedef void*    PVOID;
 typedef CHAR*    PCHAR;
 typedef UCHAR*   PUCHAR;
 typedef BYTE*    PBYTE;
@@ -84,3 +84,37 @@ typedef UINT128* PUINT128;
 typedef UINTPTR* PUINTPTR;
 typedef SIZE_T*  PSIZE_T;
 typedef SSIZE_T* PSSIZE_T;
+
+//
+// Constant pointer types
+//
+
+typedef const void*    PCVOID;
+typedef const CHAR*    PCCHAR;
+typedef const UCHAR*   PCUCHAR;
+typedef const BYTE*    PCBYTE;
+typedef const BOOL*    PCBOOL;
+typedef const INT*     PCINT;
+typedef const UINT*    PCUINT;
+typedef const FLOAT*   PCFLOAT;
+typedef const DOUBLE*  PCDOUBLE;
+typedef const INT8*    PCINT8;
+typedef const INT16*   PCINT16;
+typedef const INT32*   PCINT32;
+typedef const INT64*   PCINT64;
+typedef const INT128*  PCINT128;
+typedef const INTPTR*  PCINTPTR;
+typedef const UINT8*   PCUINT8;
+typedef const UINT16*  PCUINT16;
+typedef const UINT32*  PCUINT32;
+typedef const UINT64*  PCUINT64;
+typedef const UINT128* PCUINT128;
+typedef const UINTPTR* PCUINTPTR;
+typedef const SIZE_T*  PCSIZE_T;
+typedef const SSIZE_T* PCSSIZE_T;
+
+//
+// Array size
+//
+
+#define ARRAY_COUNT(Array) (sizeof(Array) / sizeof((Array)[0]))

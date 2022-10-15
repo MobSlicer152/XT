@@ -50,5 +50,39 @@ Return Value:
 {
     SIZE_T i;
 
-    for (i = 0; i < )
+    for (i = 0; i < ARRAY_COUNT(EfiStatusToXtStatus); i++)
+    {
+        if (EfiStatusToXtStatus[i][1] == Status)
+            return EfiStatusToXtStatus[i][0];
+    }
+}
+
+XTSTATUS
+BlEfiStatusToXtStatus(
+    EFI_STATUS Status
+    )
+/*++
+
+Routine Description:
+
+    Converts an EFI_STATUS to an XTSTATUS.
+
+Arguments:
+
+    Status -
+        The EFI_STATUS to convert.
+
+Return Value:
+
+    XTSTATUS - An appropriate equivalent to Status.
+
+--*/
+{
+    SIZE_T i;
+
+    for (i = 0; i < ARRAY_COUNT(EfiStatusToXtStatus); i++)
+    {
+        if (EfiStatusToXtStatus[i][0] == Status)
+            return EfiStatusToXtStatus[i][1];
+    }
 }
